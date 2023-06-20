@@ -327,8 +327,6 @@ const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `3`,
   margin: `0px`,
-  borderRightWidth: '.1rem',
-  height: 'auto',
 }));
 
 const FormContainer: any = styled('div')(({ theme }: any) => ({
@@ -537,7 +535,6 @@ const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `1`,
   margin: `0px`,
-  height: 'auto',
 }));
 
 const InvestorContainer: any = styled('div')(({ theme }: any) => ({
@@ -732,11 +729,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             <InfoTable1 />
           </ProfileContent>
         </ProfileContainer>
-        <DividerVertical
-          orientation="vertical"
-          height={'auto'}
-          borderRightWidth={'.1rem'}
-        />
+        <DividerVertical orientation="vertical" />
         <FormContainer>
           <FormContainerHeader>
             <AvatarWrapper>
@@ -793,7 +786,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             </FormContainer2>
           </FormContent>
         </FormContainer>
-        <DividerVertical1 orientation="vertical" height={'auto'} />
+        <DividerVertical1 orientation="vertical" />
         <InvestorContainer>
           <InvestorContainerHea>
             <Content2>
