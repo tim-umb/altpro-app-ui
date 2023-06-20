@@ -30,7 +30,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';
 import { styled } from '@mui/material/styles';
-import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
+import InfoTable from 'src/components/InfoTable/InfoTable';
 import EntityForm from 'src/components/EntityForm/EntityForm';
 import { EntityContainerProps } from 'src/types';
 
@@ -40,7 +40,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -75,7 +75,6 @@ const ProfileContainer: any = styled('div')({
   flex: `1`,
   zIndex: `4`,
   margin: `0px`,
-  maxWidth: '25%',
 });
 
 const ProfileContainerHead: any = styled('div')(({ theme }: any) => ({
@@ -318,7 +317,7 @@ const Chip3: any = styled(Chip)(({ theme }: any) => ({
   textTransform: theme.typography['Components']['chip-label'].textTransform,
 }));
 
-const InfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
+const InfoTable1: any = styled(InfoTable)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `16px 0px 0px 0px`,
 }));
@@ -342,7 +341,6 @@ const FormContainer: any = styled('div')(({ theme }: any) => ({
   flex: `1`,
   zIndex: `2`,
   margin: `0px`,
-  width: '50%',
 }));
 
 const FormContainerHeader: any = styled('div')({
@@ -551,7 +549,6 @@ const InvestorContainer: any = styled('div')(({ theme }: any) => ({
   flex: `1`,
   zIndex: `0`,
   margin: `0px`,
-  maxWidth: '25%',
 }));
 
 const InvestorContainerHea: any = styled('div')(({ theme }: any) => ({

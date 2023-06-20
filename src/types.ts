@@ -17,12 +17,24 @@
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
 
 
 
+
+
+
+export interface InfoTableProps {
+  className?: any;
+}
+
+
+export interface EntityFormProps {
+  className?: any;
+}
 
 
 export interface EntityInfoTableProps {
@@ -32,7 +44,3 @@ export interface EntityInfoTableProps {
 
 
 
-
-export interface EntityFormProps {
-  className?: any;
-}
