@@ -18,9 +18,11 @@
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
+
 
 
 
@@ -32,9 +34,11 @@ export interface InfoTableProps {
 }
 
 
+
 export interface EntityFormProps {
   className?: any;
 }
+
 
 
 export interface EntityInfoTableProps {
