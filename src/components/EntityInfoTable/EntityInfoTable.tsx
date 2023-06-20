@@ -72,14 +72,15 @@ const Box1: any = styled('div')({
 const Typography1: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Components']['table-header2'].fontStyle,
+  fontFamily: theme.typography['Components']['table-header2'].fontFamily,
+  fontWeight: theme.typography['Components']['table-header2'].fontWeight,
+  fontSize: theme.typography['Components']['table-header2'].fontSize,
+  letterSpacing: theme.typography['Components']['table-header2'].letterSpacing,
+  lineHeight: theme.typography['Components']['table-header2'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['table-header2'].textDecoration,
+  textTransform: theme.typography['Components']['table-header2'].textTransform,
 }));
 
 const Typography2: any = styled(Typography)(({ theme }: any) => ({
@@ -240,14 +241,15 @@ const Box4: any = styled('div')({
 const Typography7: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Components']['table-header2'].fontStyle,
+  fontFamily: theme.typography['Components']['table-header2'].fontFamily,
+  fontWeight: theme.typography['Components']['table-header2'].fontWeight,
+  fontSize: theme.typography['Components']['table-header2'].fontSize,
+  letterSpacing: theme.typography['Components']['table-header2'].letterSpacing,
+  lineHeight: theme.typography['Components']['table-header2'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['table-header2'].textDecoration,
+  textTransform: theme.typography['Components']['table-header2'].textTransform,
 }));
 
 const Typography8: any = styled(Typography)(({ theme }: any) => ({
@@ -408,14 +410,15 @@ const Box7: any = styled('div')({
 const Typography13: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Components']['table-header2'].fontStyle,
+  fontFamily: theme.typography['Components']['table-header2'].fontFamily,
+  fontWeight: theme.typography['Components']['table-header2'].fontWeight,
+  fontSize: theme.typography['Components']['table-header2'].fontSize,
+  letterSpacing: theme.typography['Components']['table-header2'].letterSpacing,
+  lineHeight: theme.typography['Components']['table-header2'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['table-header2'].textDecoration,
+  textTransform: theme.typography['Components']['table-header2'].textTransform,
 }));
 
 const Typography14: any = styled(Typography)(({ theme }: any) => ({
@@ -576,14 +579,15 @@ const Box10: any = styled('div')({
 const Typography19: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Components']['table-header2'].fontStyle,
+  fontFamily: theme.typography['Components']['table-header2'].fontFamily,
+  fontWeight: theme.typography['Components']['table-header2'].fontWeight,
+  fontSize: theme.typography['Components']['table-header2'].fontSize,
+  letterSpacing: theme.typography['Components']['table-header2'].letterSpacing,
+  lineHeight: theme.typography['Components']['table-header2'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['table-header2'].textDecoration,
+  textTransform: theme.typography['Components']['table-header2'].textTransform,
 }));
 
 const Typography20: any = styled(Typography)(({ theme }: any) => ({
@@ -744,14 +748,15 @@ const Box13: any = styled('div')({
 const Typography25: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Components']['table-header2'].fontStyle,
+  fontFamily: theme.typography['Components']['table-header2'].fontFamily,
+  fontWeight: theme.typography['Components']['table-header2'].fontWeight,
+  fontSize: theme.typography['Components']['table-header2'].fontSize,
+  letterSpacing: theme.typography['Components']['table-header2'].letterSpacing,
+  lineHeight: theme.typography['Components']['table-header2'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['table-header2'].textDecoration,
+  textTransform: theme.typography['Components']['table-header2'].textTransform,
 }));
 
 const Typography26: any = styled(Typography)(({ theme }: any) => ({
