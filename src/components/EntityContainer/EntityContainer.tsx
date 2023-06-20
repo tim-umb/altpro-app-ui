@@ -75,6 +75,7 @@ const ProfileContainer: any = styled('div')({
   flex: `1`,
   zIndex: `4`,
   margin: `0px`,
+  width: '25%',
 });
 
 const ProfileContainerHead: any = styled('div')(({ theme }: any) => ({
@@ -341,6 +342,7 @@ const FormContainer: any = styled('div')(({ theme }: any) => ({
   flex: `1`,
   zIndex: `2`,
   margin: `0px`,
+  width: '50%',
 }));
 
 const FormContainerHeader: any = styled('div')({
@@ -549,6 +551,7 @@ const InvestorContainer: any = styled('div')(({ theme }: any) => ({
   flex: `1`,
   zIndex: `0`,
   margin: `0px`,
+  width: '25%',
 }));
 
 const InvestorContainerHea: any = styled('div')(({ theme }: any) => ({
