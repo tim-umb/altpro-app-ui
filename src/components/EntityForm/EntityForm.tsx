@@ -218,7 +218,7 @@ const TextField3: any = styled(TextField)(({ theme }: any) => ({
 }));
 
 function EntityForm(props: EntityFormProps): JSX.Element {
-  const { data } = useEntityForm();
+  const { fns } = useEntityForm();
 
   return (
     <EntityForm1 className={props.className}>
@@ -236,7 +236,7 @@ function EntityForm(props: EntityFormProps): JSX.Element {
       <Select1 variant={'outlined'} size={'small'} disabled={false}>
         <InputLabel>{'Entity Type'}</InputLabel>
         <Select label={'Entity Type'}>
-          {data.entityType.map((item, index) => (
+          {fns.entityType.map((item, index) => (
             <MenuItem key={index} value={item.value}>
               {item.text}
             </MenuItem>

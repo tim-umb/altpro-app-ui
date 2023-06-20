@@ -13,9 +13,10 @@
 
 import React from 'react';
 const useEntityForm = () => {
+  const entityType = (): any => {};
   const data: any = {};
 
-  const fns: any = {};
+  const fns: any = {entityType};
 
   return { data, fns };
 };
