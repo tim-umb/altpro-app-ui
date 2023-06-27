@@ -17,15 +17,24 @@
 
 
 
+
+export interface EntityFormR1Props {
+  className?: any;
+};
+
+
+
 export interface EntityProfileProps {
   className?: any;
 };
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 };
+
 
 
 
