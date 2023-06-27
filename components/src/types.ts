@@ -14,6 +14,13 @@
 **********************************************************************/
 
 
+
+export interface EntityProfileProps {
+  className?: any;
+};
+
+
+
 export interface EntityFormR1Props {
   className?: any;
 };
