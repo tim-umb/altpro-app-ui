@@ -18,13 +18,14 @@ Please don't modify */
 const variantOptions = { Stateopen: 'Stateopen', Stateclose: 'Stateclose' };
 
 const useEntityContainer = () => {
+  const toggleEdit = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['Stateopen']
   );
 
   const data: any = { currentVariant };
 
-  const fns: any = { setCurrentVariant };
+  const fns: any = { setCurrentVariant ,toggleEdit};
 
   return { data, fns };
 };

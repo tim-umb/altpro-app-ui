@@ -16,8 +16,9 @@ import React from 'react';
 import { Button, Divider } from '@mui/material';
 import VectorImage from 'src/assets/images/EntityContainer_Vector_2.png';
 import { styled } from '@mui/material/styles';
+import EntityProfile from 'src/components/EntityProfile/EntityProfile';
+import EntityFormR1 from 'src/components/EntityFormR1/EntityFormR1';
 import { EntityContainerProps } from 'src/types';
-import { animated, useSpring, easings } from 'react-spring';
 import useEntityContainer from 'src/components/EntityContainer/useEntityContainer';
 
 const StateOpen: any = styled('div')(({ theme }: any) => ({
@@ -28,12 +29,13 @@ const StateOpen: any = styled('div')(({ theme }: any) => ({
   isolation: `isolate`,
   flexDirection: `column`,
   height: 'auto',
-  width: 'fit-content',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
+  maxWidth: '1400px',
 }));
 
 const Content: any = styled('div')({
@@ -46,23 +48,24 @@ const Content: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: `709px`,
-  width: `1400px`,
+  width: '100%',
   margin: `0px`,
 });
 
 const ProfileContainer: any = styled('div')({
   display: `flex`,
-  position: `absolute`,
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `400px`,
+  flex: `1`,
   height: `709px`,
-  left: `0px`,
-  top: `0px`,
+  margin: `0px`,
+  maxWidth: '350px',
+  minWidth: '350px',
 });
 
 const Body: any = styled('div')({
@@ -175,25 +178,39 @@ const ProfileContent: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
+  padding: `24px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `646px`,
   margin: `0px`,
 }));
 
-const FormContainer: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['100'],
+const EntityProfile1: any = styled(EntityProfile, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  alignSelf: data.isEdit ? 'unset' : `stretch`,
+  margin: `0px`,
+  width: data.isEdit ? `302px` : 'unset',
+}));
+
+const FormContainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  backgroundColor: theme.palette['colors']['grey']['200'],
   display: `flex`,
-  position: `absolute`,
+  position: data.isEdit ? `absolute` : `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `500px`,
+  flex: data.isEdit ? 'unset' : `1`,
   height: `709px`,
-  left: `400px`,
-  top: `0px`,
+  margin: data.isEdit ? 'unset' : `0px`,
+  width: data.isEdit ? `500px` : 'unset',
+  left: data.isEdit ? `400px` : 'unset',
+  top: data.isEdit ? `0px` : 'unset',
 }));
 
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
@@ -278,6 +295,7 @@ const CloseOutlined: any = styled('div')({
   height: `20px`,
   margin: `0px`,
   overflow: `hidden`,
+  cursor: `pointer`,
 });
 
 const Vector: any = styled('img')({
@@ -324,30 +342,35 @@ const FormContent: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
+  padding: `32px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `652px`,
   margin: `0px`,
 });
 
-const InvestorContainer: any = animated(
-  styled('div', {
-    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-  })(({ theme, data }: any) => ({
-    backgroundColor: theme.palette['colors']['grey']['100'],
-    display: `flex`,
-    position: `absolute`,
-    isolation: `isolate`,
-    flexDirection: `row`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
-    boxSizing: `border-box`,
-    width: `500px`,
-    height: `709px`,
-    left: `900px`,
-    top: `0px`,
-  }))
-);
+const EntityForm1: any = styled(EntityFormR1)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const InvestorContainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  backgroundColor: theme.palette['colors']['grey']['100'],
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: data.isEdit ? 'unset' : `450px`,
+  height: `709px`,
+  margin: `0px`,
+  flex: data.isEdit ? `1` : 'unset',
+}));
 
 const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   height: `709px`,
@@ -461,47 +484,6 @@ const Button2: any = styled(Button, {
 function EntityContainer(props: EntityContainerProps): JSX.Element {
   const { data, fns } = useEntityContainer();
 
-  const InvestorContainerStateopen = { width: `500px`, left: `900px` };
-  const InvestorContainerStateclose = { width: `999px`, left: `401px` };
-  const [InvestorContainerStateStyles, InvestorContainerStateApi] = useSpring(
-    () => ({
-      from: eval('InvestorContainer' + data.currentVariant),
-      config: { duration: 1000 },
-      delay: 500,
-    })
-  );
-
-  const switchStateToStateopen: (
-    duration: number,
-    delay: number,
-    easing: string
-  ) => void = (
-    duration: number = 0,
-    delay: number = 0,
-    easing: string = 'linear'
-  ) => {
-    InvestorContainerStateApi.start({
-      ...InvestorContainerStateopen,
-      delay,
-      config: { duration, easing: easings[easing] },
-    });
-  };
-
-  const switchStateToStateclose: (
-    duration: number,
-    delay: number,
-    easing: string
-  ) => void = (
-    duration: number = 0,
-    delay: number = 0,
-    easing: string = 'linear'
-  ) => {
-    InvestorContainerStateApi.start({
-      ...InvestorContainerStateclose,
-      delay,
-      config: { duration, easing: easings[easing] },
-    });
-  };
   return (
     <StateOpen className={props.className}>
       <Content>
@@ -518,50 +500,49 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                     color={'primary'}
                     disabled={false}
                     variant={'text'}
-                    onClick={() => {
-                      switchStateToStateopen(250, 0, 'easeOutQuart');
-                      fns.setCurrentVariant('Stateopen');
-                    }}
+                    onClick={fns.toggleEdit}
                     data={data}
                   >
-                    {'Edit'}
+                    {data.editButton()}
                   </Button1>
                 </RightContent>
               </Frame3>
               <DividerHorizontal orientation="horizontal" />
             </ContainerHeader>
-            <ProfileContent></ProfileContent>
+            <ProfileContent>
+              <EntityProfile1 data={data} />
+            </ProfileContent>
           </Body>
         </ProfileContainer>
-        <FormContainer>
-          <DividerVertical orientation="vertical" />
-          <Body1>
-            <ContainerHeader1>
-              <Frame31>
-                <LeftContent>
-                  <Icon1>
-                    <CloseOutlined
-                      onClick={() => {
-                        switchStateToStateclose(250, 0, 'easeOutQuart');
-                        fns.setCurrentVariant('Stateclose');
-                      }}
-                    >
-                      <Vector src={VectorImage} loading="lazy" alt={'Vector'} />
-                    </CloseOutlined>
-                  </Icon1>
-                </LeftContent>
-                <Content2>
-                  <Title1>{`Edit Entity`}</Title1>
-                </Content2>
-              </Frame31>
-            </ContainerHeader1>
-            <FormContent></FormContent>
-          </Body1>
-        </FormContainer>
-        <InvestorContainer
-          data={data}
-          style={{ ...InvestorContainerStateStyles }}
-        >
+        {!data.isEdit && (
+          <FormContainer data={data}>
+            <DividerVertical orientation="vertical" />
+            <Body1>
+              <ContainerHeader1>
+                <Frame31>
+                  <LeftContent>
+                    <Icon1>
+                      <CloseOutlined onClick={fns.toggleEdit}>
+                        <Vector
+                          src={VectorImage}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                      </CloseOutlined>
+                    </Icon1>
+                  </LeftContent>
+                  <Content2>
+                    <Title1>{`Edit Entity`}</Title1>
+                  </Content2>
+                </Frame31>
+              </ContainerHeader1>
+              <FormContent>
+                <EntityForm1 />
+              </FormContent>
+            </Body1>
+          </FormContainer>
+        )}
+        <InvestorContainer data={data}>
           <DividerVertical1 orientation="vertical" />
           <Body2>
             <ContainerHeader2>
