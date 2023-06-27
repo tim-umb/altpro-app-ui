@@ -16,9 +16,17 @@
 
 
 
+
+export interface EntityProfileProps {
+  className?: any;
+};
+
+
+
 export interface EntityContainerProps {
   className?: any;
 };
+
 
 
 
