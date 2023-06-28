@@ -18,9 +18,17 @@
 
 
 
+
+export interface AppBarProps {
+  className?: any;
+};
+
+
+
 export interface EntityFormR1Props {
   className?: any;
 };
+
 
 
 
@@ -31,9 +39,11 @@ export interface EntityProfileProps {
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 };
+
 
 
 
