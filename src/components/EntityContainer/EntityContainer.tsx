@@ -537,7 +537,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 </Frame31>
               </ContainerHeader1>
               <FormContent>
-
+                <EntityForm1 />
               </FormContent>
             </Body1>
           </FormContainer>
