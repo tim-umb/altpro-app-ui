@@ -13,6 +13,13 @@
 *
 **********************************************************************/
 
+
+export interface EntityContainerProps {
+  className?: any;
+};
+
+
+
 export interface EntityFormProps {
   className?: any;
 };
