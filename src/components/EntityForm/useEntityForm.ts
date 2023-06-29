@@ -13,6 +13,9 @@
 
 import React from 'react';
 const useEntityForm = () => {
+  const setTaxIdType = (): any => {};
+  const setAccreditation = (): any => {};
+  const setControlPersonExempt = (): any => {};
   const data: any = {};
   const setEntityType = (param1: any): any => {};
   const setAccountName = (param1: any): any => {};
@@ -29,7 +32,7 @@ const useEntityForm = () => {
     setTaxNumber,
     setForeignInvestor,
     setAccredition,
-    setExemptReason,
+    setExemptReason, setTaxIdType, setAccreditation, setControlPersonExempt
   };
 
   return { data, fns };
