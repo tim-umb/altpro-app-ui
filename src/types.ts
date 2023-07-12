@@ -15,9 +15,18 @@
 
 
 
+
+export interface MenuItemProps {
+  className?: any;
+  isHover: any;
+};
+
+
+
 export interface PageTemplateProps {
   className?: any;
 };
+
 
 
 
@@ -27,9 +36,11 @@ export interface EntityFormProps {
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
+
 
 
 
