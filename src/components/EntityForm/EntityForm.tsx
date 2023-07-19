@@ -235,18 +235,23 @@ function EntityForm(props: EntityFormProps): JSX.Element {
         disabled={false}
         size={'small'}
         label={'Account Name'}
-        value={data.accountName}
-        onChange={fns.setAccountName}
+        path={data.accountName.path}
+        value={data.accountName.value}
+        onChange={fns.handleAccountNameChange}
       />
       <Select1
-        onChange={fns.setEntityType}
+        path={data.entityType.path}
         variant={'outlined'}
         size={'small'}
         disabled={false}
       >
         <InputLabel>{'Entity Type'}</InputLabel>
-        <Select label={'Entity Type'} value={data.entityType}>
-          {data.entityTypeOptions.map((item, index) => (
+        <Select
+          label={'Entity Type'}
+          onChange={fns.handleEntityTypeChange}
+          value={data.entityType.value}
+        >
+          {data.entityType.options.map((item, index) => (
             <MenuItem key={index} value={item.value}>
               {item.text}
             </MenuItem>
@@ -255,14 +260,18 @@ function EntityForm(props: EntityFormProps): JSX.Element {
       </Select1>
       <Row>
         <Select2
-          onChange={fns.setTaxIdType}
+          path={data.taxIdType.path}
           variant={'outlined'}
           size={'small'}
           disabled={false}
         >
           <InputLabel>{'Tax ID Type'}</InputLabel>
-          <Select label={'Tax ID Type'} value={data.taxIdType}>
-            {data.taxIdTypeOptions.map((item, index) => (
+          <Select
+            label={'Tax ID Type'}
+            onChange={fns.handleTaxIdTypeChange}
+            value={data.taxIdType.value}
+          >
+            {data.taxIdType.options.map((item, index) => (
               <MenuItem key={index} value={item.value}>
                 {item.text}
               </MenuItem>
@@ -274,20 +283,25 @@ function EntityForm(props: EntityFormProps): JSX.Element {
           disabled={false}
           size={'small'}
           label={'Number'}
-          value={data.taxNumber}
-          onChange={fns.setTaxNumber}
+          path={data.taxNumber.path}
+          value={data.taxNumber.value}
+          onChange={fns.handleTaxNumberChange}
         />
       </Row>
       <Row1>
         <Select3
-          onChange={fns.setForeignInvestor}
+          path={data.foreignInvestor.path}
           variant={'outlined'}
           size={'small'}
           disabled={false}
         >
           <InputLabel>{'Foreign Investor'}</InputLabel>
-          <Select label={'Foreign Investor'} value={data.foreignInvestor}>
-            {data.foreignInvestorOptions.map((item, index) => (
+          <Select
+            label={'Foreign Investor'}
+            onChange={fns.handleForeignInvestorChange}
+            value={data.foreignInvestor.value}
+          >
+            {data.foreignInvestor.options.map((item, index) => (
               <MenuItem key={index} value={item.value}>
                 {item.text}
               </MenuItem>
@@ -295,14 +309,18 @@ function EntityForm(props: EntityFormProps): JSX.Element {
           </Select>
         </Select3>
         <Select4
-          onChange={fns.setAccreditation}
+          path={data.accreditation.path}
           variant={'outlined'}
           size={'small'}
           disabled={false}
         >
           <InputLabel>{'Accreditation'}</InputLabel>
-          <Select label={'Accreditation'} value={data.accreditation}>
-            {data.accreditationOptions.map((item, index) => (
+          <Select
+            label={'Accreditation'}
+            onChange={fns.handleAccreditationChange}
+            value={data.accreditation.value}
+          >
+            {data.accreditation.options.map((item, index) => (
               <MenuItem key={index} value={item.value}>
                 {item.text}
               </MenuItem>
@@ -319,8 +337,9 @@ function EntityForm(props: EntityFormProps): JSX.Element {
               size={'small'}
               color={'primary'}
               defaultChecked={false}
-              onChange={fns.setControlPersonExempt}
-              value={data.controlPersonExempt}
+              path={data.controlPersonExempt.path}
+              value={data.controlPersonExempt.value}
+              onChange={fns.handleControlPersonExemptChange}
             ></Checkbox>
           }
           label={'Control Person Exempt'}
@@ -330,8 +349,9 @@ function EntityForm(props: EntityFormProps): JSX.Element {
           disabled={false}
           size={'small'}
           label={'Exempt Reason'}
-          value={data.exemptReason}
-          onChange={fns.setExemptReason}
+          path={data.exemptReason.path}
+          value={data.exemptReason.value}
+          onChange={fns.handleExemptReasonChange}
         />
       </Row2>
     </EntityForm1>
