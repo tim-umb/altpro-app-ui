@@ -17,9 +17,11 @@
 
 
 
+
 export interface EntityFormProps {
   className?: any;
 }
+
 
 
 
@@ -33,6 +35,7 @@ export interface MenuItemProps {
 
 
 
+
 export interface PageTemplateProps {
   className?: any;
 };
@@ -41,9 +44,11 @@ export interface PageTemplateProps {
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
+
 
 
 

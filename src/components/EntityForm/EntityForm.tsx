@@ -227,7 +227,7 @@ function EntityForm(props: EntityFormProps): JSX.Element {
     <EntityForm1 className={props.className}>
       <Title>
         <Typography1 variant={'body1'} gutterBottom={false}>
-          {'Info'}
+          {data.entityForm.title}
         </Typography1>
       </Title>
       <TextField1

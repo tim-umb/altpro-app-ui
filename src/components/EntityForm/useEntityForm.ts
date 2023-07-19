@@ -14,6 +14,7 @@
 import React from 'react';
 const useEntityForm = () => {
   const handleEntityTypeChange = (): any => {};
+  const handleEntityTypeChange = (): any => {};
   const handleAccountNameChange = (): any => {};
   const handleTaxIdTypeChange = (): any => {};
   const handleTaxNumberChange = (): any => {};
@@ -40,7 +41,7 @@ const useEntityForm = () => {
     setTaxNumber,
     setForeignInvestor,
     setAccredition,
-    setExemptReason, setTaxIdType, setAccreditation, setControlPersonExempt handleEntityTypeChange, handleAccountNameChange, handleTaxIdTypeChange, handleTaxNumberChange, handleForeignInvestorChange, handleAccreditationChange, handleExemptReasonChange, handleControlPersonExemptChange
+    setExemptReason, setTaxIdType, setAccreditation, setControlPersonExempt handleEntityTypeChange, handleAccountNameChange, handleTaxIdTypeChange, handleTaxNumberChange, handleForeignInvestorChange, handleAccreditationChange, handleExemptReasonChange, handleControlPersonExemptChange handleEntityTypeChange
   };
 
   return { data, fns };
